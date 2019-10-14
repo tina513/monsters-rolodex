@@ -14,6 +14,7 @@ class App extends Component {
     };
   }
 
+  // Happen after constructor -> render -> componentDidMount(API calls should happen here)
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
