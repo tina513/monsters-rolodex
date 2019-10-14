@@ -9,7 +9,8 @@ class App extends Component {
 
     this.state = {
       monsters: [],
-      searchField: ''
+      searchField: '',
+      // meaningOfLife: 47
     };
   }
 
@@ -22,9 +23,19 @@ class App extends Component {
   handleChange = (e) => {
     this.setState(
       { searchField: e.target.value }, 
+      // Add second params for access async setState action result
       ()=> console.log(this.state)
     )
   }
+
+  // handleChange = (e) => {
+  //   // below function is better to use if this.state... is used for calculation
+  //   this.setState((prevState, prevProps) => {
+  //      return { meaningOfLife: prevState.meaningOfLife + 1}
+  //    }, 
+  //     ()=> console.log(this.state)
+  //   )
+  // }
 
   render() {
     const { monsters, searchField } = this.state;
